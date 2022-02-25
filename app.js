@@ -19,7 +19,7 @@ app.post('/equals',(req,res)=>{
 
     if(req.body.res == '+'){
     const result=n1 + n2
-    res.send('' + result)
+    res.send('' + BigInt(result))
     // Declaration
     const data = {
         first_num: String(n1),
@@ -42,7 +42,7 @@ app.post('/equals',(req,res)=>{
 
 else if(req.body.res == '-'){
     const result=n1 - n2
-    res.send(''+ result)
+    res.send(''+ BigInt(result))
     const data = {
     first_num: String(n1),
     second_num: String(n2),
@@ -63,7 +63,7 @@ client.query("Insert into user_cal values($1,$2,$3,$4,current_timestamp)",
 
 else if(req.body.res == '/'){
     const result=n1 / n2
-    res.send(''+ result)
+    res.send(''+ (result))
     const data = {
         first_num: String(n1),
         second_num: String(n2),
@@ -84,7 +84,7 @@ else if(req.body.res == '/'){
 
 else if(req.body.res == '%'){
     const result=n1 % n2
-    res.send(''+ result)
+    res.send(''+ BigInt(result))
     const data = {
         first_num: String(n1),
         second_num: String(n2),
@@ -104,7 +104,7 @@ else if(req.body.res == '%'){
 }
 else if(req.body.res == '*'){
     const result=n1 * n2
-    res.send(''+ result)
+    res.send(''+ BigInt(result))
     const data = {
         first_num: String(n1),
         second_num: String(n2),

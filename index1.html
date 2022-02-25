@@ -101,13 +101,13 @@ button[type=reset]:hover {
   border-radius: 8px;
   box-shadow:7px 12px 18px #beb4b4
 }
-labl-0{
+/*labl-0{
             font-weight: bold;
             margin-right: 40%;
             text-align: center;
             font-size: 110%;
             font-family: Cambria;
-}
+}*/
 
 /* mouse over link */
 a:hover {
@@ -145,12 +145,12 @@ a:hover {
     </center>
          <br>
          <center>
-         <button class="btn-0" type="reset" onclick="clearInput()" >AC</button>
+         <button class="btn-0" type="reset" id="resetBtn" onclick="clearInput()" >AC</button>
          <button class="btn-0" type="submit" name="res" id="output-btn" formaction="/equals" >=</button>
          </form>
-         <div class="labl-0">
-         <label for="output" class="labl-0" >Result:</label></div>
-         <iframe src="" name="result"  width= "95%" id="frame" height= '40'frameborder="20px" style="background-color: pink; border-radius: 30px;"  >
+         <!--<div class="labl-0">
+         <label for="output" class="labl-0" >Result:</label></div>-->
+         <iframe name="result"  width= "95%" id="frame" height= '40'frameborder="20px" style="background-color: pink; border-radius: 30px;"  >
         </iframe>
     <a href="/index">  View History </a>
     </center> 
@@ -181,12 +181,9 @@ a:hover {
   </script>
 
 <script>
+  document.getElementById("resetBtn").addEventListener("click", clear);
  function clearInput() {
-           document.getElementById("num1").value="";
-           document.getElementById("num2").value="";
-           document.getElementById("result").value="";
-            //var clr = document.getElementById("frame");
-            //clr.contentWindow.write = "";
+           window.location.reload();
  }
  function getval(val) {
             document.getElementById("output-btn").value = val;
